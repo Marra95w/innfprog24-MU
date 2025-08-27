@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="navn"></p>
+    <p id="age"></p>
+    <p id="melding"></p>
+    
+    <script>
+        //Min føreste variabel
+        const name = "Maria"
+            //Min første console.log()
+        console.log(name) 
+        //Min første utskrift
+        document.getElementById("navn").innerHTML = name 
+            //Fødselsår
+        const bithYear = 1995 
+            //År
+        let year = 2025
+            //Utregning av min alder basert på birthYear og year
+        let age = year - bithYear 
+
+        console.log(age)
+        
+        document.getElementById("age").innerHTML = age
+            //Konkatinering 
+        document.getElementById("melding").innerHTML = 
+        "Hei jeg heter " + name + ", og jeg er " + age + "år gammel"
+   </script>
+</body>
+</html>
