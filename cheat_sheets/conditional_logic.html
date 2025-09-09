@@ -7,10 +7,10 @@
 </head>
 <body>
     <h2> Er du kvalifisert til å ta førerkort?</h2>
-    <p id=¨carmsg¨></p>
-    <h2>kan spilleren åpne døren?</h2>
-    <p id=¨doormsg¨></p>
-    <h2>Kan jeg pensjonere meg?</h2>
+    <p id="carmsg"></p>
+    <h2> Kan spilleren åpne døren?</h2>
+    <p id="doormsg"></p>
+    <h2> Kan jeg pensjonere meg?</h2>
     <p id="retiremsg"></p>
 
     <script>
@@ -19,32 +19,36 @@
 
         //If-test 
         if(age <=18 && tg_passed === true) {
-            document.getElementById(¨carmsg¨).innerHTML = ¨Ja¨
+            document.getElementById("carmsg").innerHTML = "Ja"
         } else { 
-            document.getElementById(¨carmsg¨).innerHTML = ¨Nei¨
+            document.getElementById("carmsg").innerHTML = "Nei"
         }
+    </script>
 
+    <script>
         // sjekk om døra er låst 
         const door_locked = true
-        const backpack = ¨¨
+        const backpack = ""
 
-        let utskrift = document.getElementbyId(¨doormsg¨)
+        let utskrift = document.getElementbyId("doormsg")
 
-        if(door_locked === false){
-            utskrift.innerHTML = ¨Ja¨
+        if(door_locked === false) {
+            document.getElementById("doormsg").innerHTML = "Ja"
         } else {
-            if(backpack === ¨key¨){
-                utskrift.innerHTML = ¨Nei¨
+            if(backpack === "key") {
+                utskrift.innerHTML = "Nei"
             }
         }
+    </script>
+    <script>
 
-        let retiremsg = document.getElementById(¨retire¨)
+        let retiremsg = document.getElementById("retire")
 
         //Sjekk av mulig pesjonsalder
         if(age >= 62 && age < 67) { 
-            retiremsg.innerHTML = ¨du kan gå av med AFP¨ 
+            retiremsg.innerHTML = "du kan gå av med AFP" 
         } else if(age >= 67) {
-            retiremsg.innerHTML = ¨Du kan gå av med full pensjon¨
+            retiremsg.innerHTML = "Du kan gå av med full pensjon"
         } else { 
             retiremsg.innerHTTML = `DU kan gå av med AFP om ${62 - age} år, og full pansjon om ${67 - age} år`
         }
